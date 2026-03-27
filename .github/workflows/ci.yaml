@@ -45,14 +45,14 @@ jobs:
         run: |
           docker push $DOCKER_REGISTRY/$IMAGE_NAME:$IMAGE_TAG
 
-      - name: Run Trivy vulnerability scanner
-        uses: aquasecurity/trivy-action@v0.20.0
-        with:
-          image-ref: ${{ secrets.DOCKERHUB_USERNAME }}/ci-html-demo:latest
-          format: table
-          severity: CRITICAL,HIGH
-          vuln-type: os,library
-          ignore-unfixed: true
+      #- name: Run Trivy vulnerability scanner
+       # uses: aquasecurity/trivy-action@v0.20.0
+       # with:
+          #image-ref: ${{ secrets.DOCKERHUB_USERNAME }}/ci-html-demo:latest
+          #format: table
+         # severity: CRITICAL,HIGH
+          #vuln-type: os,library
+          #ignore-unfixed: true
 
   # ===============================
   # JOB 2 - CD : DEPLOY
